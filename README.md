@@ -2,7 +2,7 @@
 Website of tavernedudev
 
 # Contributors
-* Sébastien Vermeille <sebastien.vermeille@gmailcom>
+* Sébastien Vermeille <sebastien.vermeille@gmail.com>
 
 # Development
 
