@@ -202,3 +202,6 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/macos,linux,windows,eclipse,netbeans,jetbrains+iml,visualstudiocode
+
+# Custom
+.idea/
