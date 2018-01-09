@@ -8,13 +8,13 @@
 	<meta name="HandheldFriendly" content="True" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-	<link rel="stylesheet" href="/assets/css/style.css">
+	<link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
 
-	<link rel="alternate" type="application/rss+xml" title="Taverne du dev" href="/feed.xml">
+	<link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
 </head>
 <body>
 	<header class="top">
-		<a class="meet disabled" data-text="Rencontres IRL"><img src="/assets/images/beers.svg" alt="Recontres IRL"></a>
+		<a class="meet disabled" data-text="Rencontres IRL"><img src="{{ "/assets/images/beers.svg" | relative_url }}" alt="Recontres IRL"></a>
 		<div>
 			<a class="home-link" href="/">La Taverne du Développeur</a>
 			<p>Communauté d’entraide entre développeurs francophones</p>
@@ -26,33 +26,13 @@
 	</div>
 	</nav>
 	<main class="main">
-		<style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
-
-<div class="container">
-  <h1>404</h1>
-
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
-
+		{{ content }}
 		<footer class="bottom">
 			<nav>
-				<a href="http://slackin.tavernedudev.fr">Rejoindre sur Slack</a><a href="/feed.xml">Subscribe via RSS</a>
+				<a href="http://slackin.tavernedudev.fr">Rejoindre sur Slack</a><a href="{{ "/feed.xml" | relative_url }}">Subscribe via RSS</a>
 			</nav>
 		</footer>
 	</main>
-	<script src="/assets/js/scroll.js" charset="utf-8"></script>
+	<script src="{{ "/assets/js/scroll.js" | relative_url }}" charset="utf-8"></script>
 </body>
 </html>
