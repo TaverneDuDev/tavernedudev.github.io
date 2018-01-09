@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	<title>Taverne du Développeur</title>
+	<meta name="HandheldFriendly" content="True" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+	<link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+
+	<link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
+</head>
+<body>
+	<header class="top">
+		<a class="meet disabled" data-text="Rencontres IRL"><img src="{{ "/assets/images/beers.svg" | relative_url }}" alt="Recontres IRL"></a>
+		<div>
+			<a class="home-link" href="/">La Taverne du Développeur</a>
+			<p>Communauté d’entraide entre développeurs francophones</p>
+		</div>
+	</header>
+	<nav class="nav">
+	<div>
+		<a href="/">Accueil</a><a href="/webzine/">Webzine</a><a href="/boutique/">Boutique</a>
+	</div>
+	</nav>
+	<main class="main">
+		{{ content }}
+		<footer class="bottom">
+			<nav>
+				<a href="http://slackin.tavernedudev.fr">Rejoindre sur Slack</a><a href="{{ "/feed.xml" | relative_url }}">Subscribe via RSS</a>
+			</nav>
+		</footer>
+	</main>
+	<script src="{{ "/assets/js/scroll.js" | relative_url }}" charset="utf-8"></script>
+</body>
+</html>
