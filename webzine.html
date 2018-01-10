@@ -4,10 +4,10 @@ title: Webzine
 permalink: /webzine/
 ---
 <div class="webzine">
-	<div class="overlap">
+	<header class="head-page">
 		<h2>Webzine</h2>
 		<p>Vous retrouverez ici régulièrement des articles écrits par les membres de la Taverne Du Dev.</p>
-	</div>	{% if site.posts.size > 0 %}
+	</header>	{% if site.posts.size > 0 %}
 	<div class="list-of-posts">
 		{% for post in site.posts %}
 			<a class="post-link" href="{{ post.url | relative_url }}">

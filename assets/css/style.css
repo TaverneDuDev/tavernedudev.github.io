@@ -1,11 +1,27 @@
+/****************************************
+**************** SUMMARY ****************
+1. FONTS
+2. GENERAL
+3. SITE HEADER
+4. SITE FOOTER
+5. HOMEPAGE
+6. WEBZINE PAGE
+7. ARTICLES PAGE
+8. SIMPLE PAGE
+9. CODE HIGHLIGHTING
+10. MEDIA SCREEN
+*****************************************
+******************* ❤️ *****************/
+
+
+
 /*******
 ****
 ***
-* FONTS
+1. FONTS
 ***
 ****
 *******/
-
 /* latin */
 @font-face {
 	font-family: "Averia Serif Libre";
@@ -99,14 +115,14 @@
 	U+2215;
 }
 
+
 /*******
 ****
 ***
-* GENERAL
+2. GENERAL
 ***
 ****
 *******/
-
 :root {
 	font-family: "Source Sans Pro", sans-serif;
 	font-size: 16px;
@@ -117,6 +133,10 @@
 body {
 	margin: inherit;
 	background-color: #fafafa;
+	padding-top: 4.4rem; /* Equal to the nav height */
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
 }
 
 * {
@@ -193,165 +213,23 @@ p {
 .disabled {
 	cursor: not-allowed;
 	-webkit-user-select: none;
-	user-select: none;
+	        user-select: none;
 }
-
-/*******
-****
-***
-* TOP
-***
-****
-*******/
-
-.top {
-	color: hsla(343, 78%, 80%, 1);
-	background-color: hsla(343, 51%, 48%, 1);
-}
-
-.top > div {
-	position: relative;
-	max-width: 70rem;
-	margin: 0 auto;
-	padding: 5rem 2rem;
-}
-
-.top > .meet {
-	position: absolute;
-	top: 1rem;
-	right: 1rem;
-	height: 7rem;
-	background-color: hsla(343, 78%, 60%, 1);
-	width: 7rem;
-	padding: .5rem;
-	border-radius: .4rem;
-}
-
-.top > .meet:hover:after {
-	pointer-events: auto;
-	opacity: 1;
-}
-
-.top > .meet:after {
-	content: attr(data-text);
-	position: absolute;
-	right: 0;
-	bottom: -2.2rem;
-	height: 1.8rem;
-	background-color: hsla(343, 78%, 70%, 1);
-	color: hsla(343, 78%, 95%, 1);
-	white-space: nowrap;
-	line-height: 1.8rem;
-	border-radius: .4rem;
-	padding: 0 .5rem;
-	pointer-events: none;
-	opacity: 0;
-	transition: .2s opacity;
-}
-
-.top > .meet > img {
-	height: 100%;
-	width: 100%;
-	object-fit: cover;
-}
-
-.nav {
-	background-color: hsla(343, 78%, 60%, 1);
-	top: 0;
-	position: -webkit-sticky;
-	position:         sticky;
-	z-index: 333;
-}
-
-.nav > div {
-	max-width: 70rem;
-	margin: 0 auto;
-	padding: 0 2rem;
-}
-
-.nav a {
-	display: inline-block;
-	margin-right: .8rem;
-	transition: .3s color;
-	border-radius: .2rem;
-	color: hsla(343, 78%, 90%, 1);
-	padding: 1rem .5rem;
-	line-height: 1.2rem;
-}
-
-.nav a:hover {
-	color: #fff;
-}
-
-.home-link {
-	font-family: "Averia Serif Libre";
-	font-size: 4rem;
-	font-weight: bold;
-	line-height: 1em;
-	margin-left: -.2rem;
-	transition: .2s color;
-}
-
-.home-link:hover {
-	color: #fff;
-}
-
-.top p {
-	margin: 0rem;
-	color: inherit;
-}
-
-/*******
-****
-***
-* MAIN
-***
-****
-*******/
 
 .main {
-	position: relative;
-	overflow: visible;
-}
-
-.overlap,
-.overlap {
-	margin-bottom: 6rem;
-	padding: 4rem 2rem;
-	border-bottom: 1px solid #eee;
-	background-color: #fff;
-}
-
-.homepage h2 {
-	font-size: 3rem;
-	line-height: 1em;
-	margin: 0;
-	margin-bottom: 1.5rem;
-}
-
-.overlap h2 {
-	font-size: 3rem;
-	line-height: 1em;
-	display: table;
-	max-width: 42rem;
-	margin: 0 auto;
-	margin-bottom: 1.5rem;
-}
-
-.overlap p {
-	max-width: 42rem;
-	margin: 0 auto;
-	text-align: center;
-}
-
-.homepage > section {
+	flex: 1;
+	width: 100vw;
 	max-width: 70rem;
 	margin: 0 auto;
-	padding: 0 2rem;
+}
+
+.head-page {
+	padding: 5rem 2rem;
+	margin-bottom: 2rem;
 	position: relative;
 }
 
-.homepage > section:not(:last-of-type):after {
+.head-page:after {
 	content: "";
 	width: calc(100% - 4rem);
 	height: 1px;
@@ -360,6 +238,167 @@ p {
 	position: absolute;
 	bottom: 0;
 	left: 2rem;
+}
+
+.homepage .head-page h2,
+.head-page h2 {
+	font-size: 3rem;
+	line-height: 1em;
+	display: table;
+	max-width: 42rem;
+	margin: 0 auto;
+	margin-bottom: 1.5rem;
+}
+
+.head-page p {
+	max-width: 42rem;
+	margin: 0 auto;
+	text-align: center;
+}
+
+
+/*******
+****
+***
+3. SITE HEADER
+***
+****
+*******/
+.main-header {
+	background-color: #fff;
+	position: fixed;
+	top: 0;
+	height: 4.4rem;
+	width: 100vw;
+	z-index: 998;
+	box-shadow: 0 0 1rem hsla(0, 0%, 80%, .5);
+}
+
+.main-nav {
+	display: flex;
+	height: inherit;
+	max-width: 70rem;
+	padding: 0 2rem;
+	margin: 0 auto;
+}
+
+.main-nav > a {
+	line-height: 3.65rem;
+	padding: 0 .5rem;
+	margin: .5rem 0;
+	font-weight: bold;
+	background-color: #000;
+	color: #fff;
+	font-size: 1.8rem;
+	position: relative;
+	height: 3.4rem;
+	margin-right: auto;
+	font-family: "Averia Serif Libre", sans-serif;
+	transition: .2s background-color, .2s color;
+}
+
+.main-nav > a:hover {
+	color: #000;
+	background-color: #eee;
+}
+
+.menu {
+	height: inherit;
+	display: inherit;
+}
+
+.show-menu-btn {
+	display: none;
+}
+
+.menu a {
+	margin: .95rem .2rem;
+	padding: 0 .5rem;
+	line-height: 2.5rem;
+	height: 2.5rem;
+	color: #555;
+	transition: .2s color;
+}
+
+.menu > a:hover {
+	color: #000;
+}
+
+
+/*******
+****
+***
+4. SITE FOOTER
+***
+****
+*******/
+.bottom {
+	position: relative;
+	height: 10rem;
+	background-color: #fff;
+	margin-top: 6rem;
+	box-shadow: 0 0 5rem hsla(0, 0%, 90%, .5);;
+}
+
+.bottom > nav {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: table;
+}
+
+.bottom > nav > a {
+	font-size: .9rem;
+	padding: 1rem .5rem;
+	transition: .3s border-color;
+	text-align: center;
+	border: 1px solid #eee;
+	border-radius: .2rem;
+	width: 11rem;
+	margin: 0 .5rem;
+	display: inline-block;
+}
+
+.bottom > nav > a:hover {
+	border-color: #999;
+}
+
+
+/*******
+****
+***
+5. HOMEPAGE
+***
+****
+*******/
+.homepage > section {
+	width: inherit;
+	padding: 0 2rem;
+	position: relative;
+}
+
+.homepage > section:not(:first-of-type) {
+	padding-top: 2.5rem;
+}
+
+.homepage > section:not(:last-of-type) {
+	padding-bottom: 2.5rem;
+}
+
+.homepage > section:nth-of-type(odd) div {
+	padding-right: 2rem;
+}
+
+.homepage > section:nth-of-type(even) div {
+	padding-left: 5rem;
+}
+
+.homepage h2 {
+	font-size: 3rem;
+	line-height: 1em;
+	margin: 0;
+	margin-bottom: 1.5rem;
 }
 
 .homepage > section > div {
@@ -384,95 +423,14 @@ p {
 	object-fit: cover;
 }
 
-.homepage > section:not(:first-of-type) {
-	padding-top: 2.5rem;
-}
-
-.homepage > section:not(:last-of-type) {
-	padding-bottom: 2.5rem;
-}
-
-.homepage > section:nth-of-type(odd) div {
-	padding-right: 2rem;
-}
-
-.homepage > section:nth-of-type(even) div {
-	padding-left: 5rem;
-}
-
-@media screen and (max-width: 50rem) {
-	.homepage > section > div {
-		display: block;
-		width: 100%;
-		padding: 2rem !important;
-		text-align: center;
-	}
-
-	.homepage > section > img {
-		display: block;
-		width: 100%;
-		height: auto;
-	}
-
-	.homepage .bottom {
-		margin-top: 3rem;
-	}
-
-	.homepage .overlap {
-		margin-bottom: 3rem;
-	}
-
-	h1 {
-		font-size: 3rem;
-	}
-
-	.hompage h2 {
-		font-size: 2rem;
-	}
-}
-
-@media screen and (max-width: 30rem) {
-	h1 {
-		font-size: 2.5rem;
-	}
-
-	.homepage h2 {
-		font-size: 1.5rem;
-	}
-}
-
 
 /*******
 ****
 ***
-* PAGE
+6. WEBZINE PAGE
 ***
 ****
 *******/
-.page {
-	max-width: 70rem;
-	margin: 0 auto;
-	padding: 0 2rem;
-	position: relative;
-}
-
-.page h1 {
-	padding: 2rem 0;
-	font-size: 3rem;
-	text-align: center;
-}
-
-/*******
-****
-***
-* WEBZINE
-***
-****
-*******/
-.webzine {
-
-}
-
 .webzine h1 {
 	padding: 3rem 0;
 	font-size: 3rem;
@@ -480,8 +438,7 @@ p {
 }
 
 .list-of-posts {
-	max-width: 70rem;
-	margin: 0 auto;
+	max-width: inherit;
 	padding: 0 2rem;
 }
 
@@ -491,14 +448,18 @@ p {
 	background-color: #fff;
 	box-shadow: 0 .5rem 1rem hsla(0, 0%, 86%, .43);
 	display: block;
+	transition: .2s box-shadow, .2s transform;
+}
+
+.post-link:hover {
+	transform: scale(1.01);
+	box-shadow: 0 .5rem 1.1rem hsla(0, 0%, 86%, .55);
+	transition: .3s box-shadow, .3s transform;
 }
 
 .post-link:first-child,
 .post-link:last-child {
 	margin: 0;
-}
-
-.post-link h2 {
 }
 
 .post-link time {
@@ -510,7 +471,7 @@ p {
 /*******
 ****
 ***
-* ARTICLES
+7. ARTICLES PAGE
 ***
 ****
 *******/
@@ -551,123 +512,388 @@ p {
 /*******
 ****
 ***
-* BOTTOM
+8. SIMPLE PAGE
 ***
 ****
 *******/
-
-.bottom {
+.page {
+	padding: 0 2rem;
 	position: relative;
-	height: 10rem;
-	border-top: 1px solid #eee;
-	border-bottom: 1px solid #eee;
-	background-color: #fff;
-	margin-top: 6rem;
 }
 
-.bottom > nav {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	display: table;
-}
-
-.bottom > nav > a {
-	font-size: .9rem;
-	padding: 1rem .5rem;
-	transition: .3s border-color;
+.page h1 {
+	padding: 2rem 0;
+	font-size: 3rem;
 	text-align: center;
-	border: 1px solid #eee;
-	border-radius: .2rem;
-	width: 11rem;
-	margin: 0 .5rem;
-	display: inline-block;
 }
 
-.bottom > nav > a:hover {
-	border-color: #999;
+.page > p:only-child {
+	text-align: center;
+	margin: 2rem;
 }
 
 
 /*******
 ****
 ***
-* CODE
+9. CODE HIGHLIGHTING
 ***
 ****
 *******/
-.highlight { margin: 0 }
-.highlight pre { padding: 1rem }
+.highlight {
+	margin: 0;
+}
+.highlight pre {
+	padding: 1rem;
+}
+.highlight pre {
+	background-color: #404040;
+}
+.highlight .hll {
+	background-color: #404040;
+}
+.highlight .c {
+	color: #999;
+	font-style: italic;
+} /* Comment */
+.highlight .err {
+	color: #a61717;
+	background-color: #e3d2d2;
+} /* Error */
+.highlight .g {
+	color: #d0d0d0;
+} /* Generic */
+.highlight .k {
+	color: #6ab825;
+	font-weight: bold;
+} /* Keyword */
+.highlight .l {
+	color: #d0d0d0;
+} /* Literal */
+.highlight .n {
+	color: #d0d0d0;
+} /* Name */
+.highlight .o {
+	color: #d0d0d0;
+} /* Operator */
+.highlight .x {
+	color: #d0d0d0;
+} /* Other */
+.highlight .p {
+	color: #d0d0d0;
+} /* Punctuation */
+.highlight .cm {
+	color: #999;
+	font-style: italic;
+} /* Comment.Multiline */
+.highlight .cp {
+	color: #cd2828;
+	font-weight: bold;
+} /* Comment.Preproc */
+.highlight .c1 {
+	color: #999;
+	font-style: italic;
+} /* Comment.Single */
+.highlight .cs {
+	color: #e50808;
+	font-weight: bold;
+	background-color: #520000;
+} /* Comment.Special */
+.highlight .gd {
+	color: #d22323;
+} /* Generic.Deleted */
+.highlight .ge {
+	color: #d0d0d0;
+	font-style: italic;
+} /* Generic.Emph */
+.highlight .gr {
+	color: #d22323;
+} /* Generic.Error */
+.highlight .gh {
+	color: #fff;
+	font-weight: bold;
+} /* Generic.Heading */
+.highlight .gi {
+	color: #589819;
+} /* Generic.Inserted */
+.highlight .go {
+	color: #ccc;
+} /* Generic.Output */
+.highlight .gp {
+	color: #aaa;
+} /* Generic.Prompt */
+.highlight .gs {
+	color: #d0d0d0;
+	font-weight: bold;
+} /* Generic.Strong */
+.highlight .gu {
+	color: #fff;
+	text-decoration: underline;
+} /* Generic.Subheading */
+.highlight .gt {
+	color: #d22323;
+} /* Generic.Traceback */
+.highlight .kc {
+	color: #6ab825;
+	font-weight: bold;
+} /* Keyword.Constant */
+.highlight .kd {
+	color: #6ab825;
+	font-weight: bold;
+} /* Keyword.Declaration */
+.highlight .kn {
+	color: #6ab825;
+	font-weight: bold;
+} /* Keyword.Namespace */
+.highlight .kp {
+	color: #6ab825;
+} /* Keyword.Pseudo */
+.highlight .kr {
+	color: #6ab825;
+	font-weight: bold;
+} /* Keyword.Reserved */
+.highlight .kt {
+	color: #6ab825;
+	font-weight: bold;
+} /* Keyword.Type */
+.highlight .ld {
+	color: #d0d0d0;
+} /* Literal.Date */
+.highlight .m {
+	color: #3677a9;
+} /* Literal.Number */
+.highlight .s {
+	color: #ed9d13;
+} /* Literal.String */
+.highlight .na {
+	color: #bbb;
+} /* Name.Attribute */
+.highlight .nb {
+	color: #24909d;
+} /* Name.Builtin */
+.highlight .nc {
+	color: #447fcf;
+	text-decoration: underline;
+} /* Name.Class */
+.highlight .no {
+	color: #40ffff;
+} /* Name.Constant */
+.highlight .nd {
+	color: #ffa500;
+} /* Name.Decorator */
+.highlight .ni {
+	color: #d0d0d0;
+} /* Name.Entity */
+.highlight .ne {
+	color: #bbb;
+} /* Name.Exception */
+.highlight .nf {
+	color: #447fcf;
+} /* Name.Function */
+.highlight .nl {
+	color: #d0d0d0;
+} /* Name.Label */
+.highlight .nn {
+	color: #447fcf;
+	text-decoration: underline;
+} /* Name.Namespace */
+.highlight .nx {
+	color: #d0d0d0;
+} /* Name.Other */
+.highlight .py {
+	color: #d0d0d0;
+} /* Name.Property */
+.highlight .nt {
+	color: #6ab825;
+	font-weight: bold;
+} /* Name.Tag */
+.highlight .nv {
+	color: #40ffff;
+} /* Name.Variable */
+.highlight .ow {
+	color: #6ab825;
+	font-weight: bold;
+} /* Operator.Word */
+.highlight .w {
+	color: #666;
+} /* Text.Whitespace */
+.highlight .mf {
+	color: #3677a9;
+} /* Literal.Number.Float */
+.highlight .mh {
+	color: #3677a9;
+} /* Literal.Number.Hex */
+.highlight .mi {
+	color: #3677a9;
+} /* Literal.Number.Integer */
+.highlight .mo {
+	color: #3677a9;
+} /* Literal.Number.Oct */
+.highlight .sb {
+	color: #ed9d13;
+} /* Literal.String.Backtick */
+.highlight .sc {
+	color: #ed9d13;
+} /* Literal.String.Char */
+.highlight .sd {
+	color: #ed9d13;
+} /* Literal.String.Doc */
+.highlight .s2 {
+	color: #ed9d13;
+} /* Literal.String.Double */
+.highlight .se {
+	color: #ed9d13;
+} /* Literal.String.Escape */
+.highlight .sh {
+	color: #ed9d13;
+} /* Literal.String.Heredoc */
+.highlight .si {
+	color: #ed9d13;
+} /* Literal.String.Interpol */
+.highlight .sx {
+	color: #ffa500;
+} /* Literal.String.Other */
+.highlight .sr {
+	color: #ed9d13;
+} /* Literal.String.Regex */
+.highlight .s1 {
+	color: #ed9d13;
+} /* Literal.String.Single */
+.highlight .ss {
+	color: #ed9d13;
+} /* Literal.String.Symbol */
+.highlight .bp {
+	color: #24909d;
+} /* Name.Builtin.Pseudo */
+.highlight .vc {
+	color: #40ffff;
+} /* Name.Variable.Class */
+.highlight .vg {
+	color: #40ffff;
+} /* Name.Variable.Global */
+.highlight .vi {
+	color: #40ffff;
+} /* Name.Variable.Instance */
+.highlight .il {
+	color: #3677a9;
+} /* Literal.Number.Integer.Long */
 
 
-.highlight pre { background-color: #404040 }
-.highlight .hll { background-color: #404040 }
-.highlight .c { color: #999999; font-style: italic } /* Comment */
-.highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
-.highlight .g { color: #d0d0d0 } /* Generic */
-.highlight .k { color: #6ab825; font-weight: bold } /* Keyword */
-.highlight .l { color: #d0d0d0 } /* Literal */
-.highlight .n { color: #d0d0d0 } /* Name */
-.highlight .o { color: #d0d0d0 } /* Operator */
-.highlight .x { color: #d0d0d0 } /* Other */
-.highlight .p { color: #d0d0d0 } /* Punctuation */
-.highlight .cm { color: #999999; font-style: italic } /* Comment.Multiline */
-.highlight .cp { color: #cd2828; font-weight: bold } /* Comment.Preproc */
-.highlight .c1 { color: #999999; font-style: italic } /* Comment.Single */
-.highlight .cs { color: #e50808; font-weight: bold; background-color: #520000 } /* Comment.Special */
-.highlight .gd { color: #d22323 } /* Generic.Deleted */
-.highlight .ge { color: #d0d0d0; font-style: italic } /* Generic.Emph */
-.highlight .gr { color: #d22323 } /* Generic.Error */
-.highlight .gh { color: #ffffff; font-weight: bold } /* Generic.Heading */
-.highlight .gi { color: #589819 } /* Generic.Inserted */
-.highlight .go { color: #cccccc } /* Generic.Output */
-.highlight .gp { color: #aaaaaa } /* Generic.Prompt */
-.highlight .gs { color: #d0d0d0; font-weight: bold } /* Generic.Strong */
-.highlight .gu { color: #ffffff; text-decoration: underline } /* Generic.Subheading */
-.highlight .gt { color: #d22323 } /* Generic.Traceback */
-.highlight .kc { color: #6ab825; font-weight: bold } /* Keyword.Constant */
-.highlight .kd { color: #6ab825; font-weight: bold } /* Keyword.Declaration */
-.highlight .kn { color: #6ab825; font-weight: bold } /* Keyword.Namespace */
-.highlight .kp { color: #6ab825 } /* Keyword.Pseudo */
-.highlight .kr { color: #6ab825; font-weight: bold } /* Keyword.Reserved */
-.highlight .kt { color: #6ab825; font-weight: bold } /* Keyword.Type */
-.highlight .ld { color: #d0d0d0 } /* Literal.Date */
-.highlight .m { color: #3677a9 } /* Literal.Number */
-.highlight .s { color: #ed9d13 } /* Literal.String */
-.highlight .na { color: #bbbbbb } /* Name.Attribute */
-.highlight .nb { color: #24909d } /* Name.Builtin */
-.highlight .nc { color: #447fcf; text-decoration: underline } /* Name.Class */
-.highlight .no { color: #40ffff } /* Name.Constant */
-.highlight .nd { color: #ffa500 } /* Name.Decorator */
-.highlight .ni { color: #d0d0d0 } /* Name.Entity */
-.highlight .ne { color: #bbbbbb } /* Name.Exception */
-.highlight .nf { color: #447fcf } /* Name.Function */
-.highlight .nl { color: #d0d0d0 } /* Name.Label */
-.highlight .nn { color: #447fcf; text-decoration: underline } /* Name.Namespace */
-.highlight .nx { color: #d0d0d0 } /* Name.Other */
-.highlight .py { color: #d0d0d0 } /* Name.Property */
-.highlight .nt { color: #6ab825; font-weight: bold } /* Name.Tag */
-.highlight .nv { color: #40ffff } /* Name.Variable */
-.highlight .ow { color: #6ab825; font-weight: bold } /* Operator.Word */
-.highlight .w { color: #666666 } /* Text.Whitespace */
-.highlight .mf { color: #3677a9 } /* Literal.Number.Float */
-.highlight .mh { color: #3677a9 } /* Literal.Number.Hex */
-.highlight .mi { color: #3677a9 } /* Literal.Number.Integer */
-.highlight .mo { color: #3677a9 } /* Literal.Number.Oct */
-.highlight .sb { color: #ed9d13 } /* Literal.String.Backtick */
-.highlight .sc { color: #ed9d13 } /* Literal.String.Char */
-.highlight .sd { color: #ed9d13 } /* Literal.String.Doc */
-.highlight .s2 { color: #ed9d13 } /* Literal.String.Double */
-.highlight .se { color: #ed9d13 } /* Literal.String.Escape */
-.highlight .sh { color: #ed9d13 } /* Literal.String.Heredoc */
-.highlight .si { color: #ed9d13 } /* Literal.String.Interpol */
-.highlight .sx { color: #ffa500 } /* Literal.String.Other */
-.highlight .sr { color: #ed9d13 } /* Literal.String.Regex */
-.highlight .s1 { color: #ed9d13 } /* Literal.String.Single */
-.highlight .ss { color: #ed9d13 } /* Literal.String.Symbol */
-.highlight .bp { color: #24909d } /* Name.Builtin.Pseudo */
-.highlight .vc { color: #40ffff } /* Name.Variable.Class */
-.highlight .vg { color: #40ffff } /* Name.Variable.Global */
-.highlight .vi { color: #40ffff } /* Name.Variable.Instance */
-.highlight .il { color: #3677a9 } /* Literal.Number.Integer.Long */
+/*******
+****
+***
+10. MEDIA SCREEN
+***
+****
+*******/
+@media screen and (max-width: 50rem) {
+	.homepage > section > div {
+		display: block;
+		width: 100%;
+		padding: 2rem !important;
+		text-align: center;
+	}
+
+	.homepage > section > img {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+
+	.bottom {
+		margin-top: 2rem;
+	}
+
+	.head-page {
+		padding: 3rem 2rem;
+		margin-bottom: 1rem;
+	}
+
+	h1 {
+		font-size: 3rem;
+	}
+
+	.hompage h2 {
+		font-size: 2rem;
+	}
+}
+
+@media screen and (max-width: 30rem) {
+	h1 {
+		font-size: 2.5rem;
+	}
+
+	.homepage h2 {
+		font-size: 1.5rem;
+	}
+}
+
+@media screen and (max-width: 25rem) {
+	.bottom > nav > a {
+		width: 11rem;
+		margin: 0 auto;
+		display: block;
+	}
+
+	.bottom > nav > a:first-of-type {
+		margin-bottom: .5rem;
+	}
+}
+
+@media screen and (max-width: 40rem) {
+	.show-menu-btn {
+		display: block;
+		background-color: #000;
+		color: #fff;
+		-webkit-user-select: none;
+		        user-select: none;
+		cursor: pointer;
+		width: 4.4rem;
+		height: 2.4rem;
+		margin: 1rem 0;
+		line-height: 2.4rem;
+		text-align: center;
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+
+	.menu {
+		display: block;
+		left: 0;
+		position: fixed;
+		top: 4.4rem;
+		background-color: hsla(0, 0%, 0%, 1);
+		width: 100vw;
+		height: 0;
+		border-top: 1px solid #fafafa;
+		z-index: 990;
+		overflow: hidden;
+		transition: .4s height;
+	}
+
+	#show-menu:checked ~ .main-header .menu {
+		height: calc(100vh - 4.4rem);
+		transition: 1s height;
+	}
+
+	.menu > a {
+		display: block;
+		margin: 0 1rem;
+		padding: 0 2rem;
+		line-height: 4rem;
+		height: 4rem;
+		color: #fff;
+	}
+
+	.menu > a:hover {
+		color: #bbb;
+	}
+
+	.menu > a:first-of-type {
+		margin-top: 1rem;
+	}
+
+	.menu > a:not(:first-of-type) {
+		border-top: 1px solid #aaa;
+	}
+}
