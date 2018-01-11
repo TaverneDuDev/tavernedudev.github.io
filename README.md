@@ -3,6 +3,7 @@ Website of tavernedudev
 
 # Contributors
 * Sébastien Vermeille <sebastien.vermeille@gmail.com>
+* Mathis Serriere (kazou) <mathis.serriere@me.com>
 
 # Development
 

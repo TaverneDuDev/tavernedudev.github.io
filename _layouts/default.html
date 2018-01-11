@@ -13,26 +13,27 @@
 	<link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
 </head>
 <body>
-	<header class="top">
-		<a class="meet disabled" data-text="Rencontres IRL"><img src="{{ "/assets/images/beers.svg" | relative_url }}" alt="Recontres IRL"></a>
-		<div>
-			<a class="home-link" href="/">La Taverne du Développeur</a>
-			<p>Communauté d’entraide entre développeurs francophones</p>
-		</div>
+	<input class="disapear" type="checkbox" id="show-menu">
+	<header class="main-header">
+		<nav class="main-nav">
+			<a href="/">TDD</a>
+			<label class="show-menu-btn" for="show-menu">Menu</label>
+			<div class="menu">
+				<a href="/webzine/">Webzine</a>
+				<a href="/boutique/">Boutique</a>
+				<a href="/rencontres/">Rencontres IRL</a>
+			</div>
+		</nav>
 	</header>
-	<nav class="nav">
-	<div>
-		<a href="/">Accueil</a><a href="/webzine/">Webzine</a><a href="/boutique/">Boutique</a>
-	</div>
-	</nav>
 	<main class="main">
 		{{ content }}
-		<footer class="bottom">
-			<nav>
-				<a href="http://slackin.tavernedudev.fr">Rejoindre sur Slack</a><a href="{{ "/feed.xml" | relative_url }}">Subscribe via RSS</a>
-			</nav>
-		</footer>
 	</main>
+	<footer class="bottom">
+		<nav>
+			<a href="http://slackin.tavernedudev.fr">Rejoindre sur Slack</a><a href="{{ "/feed.xml" | relative_url }}">Subscribe via RSS</a>
+		</nav>
+	</footer>
+
 	<script src="{{ "/assets/js/scroll.js" | relative_url }}" charset="utf-8"></script>
 </body>
 </html>
