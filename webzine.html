@@ -7,14 +7,14 @@ permalink: /webzine/
 	<header class="head-page">
 		<h2>Webzine</h2>
 		<p>Vous retrouverez ici régulièrement des articles écrits par les membres de la Taverne Du Dev.</p>
-	</header>	{% if site.posts.size > 0 %}
+	</header>
+	{% if site.posts.size > 0 %}
 	<div class="list-of-posts">
 		{% for post in site.posts %}
 			<a class="post-link" href="{{ post.url | relative_url }}">
-				<h2>{{ post.title | escape }}</h2>
-
 				{% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
 				<time>{{ post.date | date: date_format }}</time>
+				<h2>{{ post.title | escape }}</h2>
 			</a>
 		{% endfor %}
 	</div>
